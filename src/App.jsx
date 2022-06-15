@@ -6,6 +6,20 @@ function App() {
 
   const handleUpdateComplexity = (id, type) => {
     // твой код
+ 
+    setChallenges(challenges.map((item) => {
+      if( type === 'plus' && item.id === id ) {
+   item.complexity += 1
+  return item
+      } 
+      if( type === 'minus' && item.id === id ) {
+        item.complexity -= 1
+        return item
+      }
+      return item
+    }))
+   
+
   };
 
   return (
